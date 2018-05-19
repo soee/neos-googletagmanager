@@ -7,7 +7,7 @@ prototype(Soee.GoogleTagManager:NoscriptCode) < prototype(Neos.Fusion:Tag) {
     tagName = 'iframe'
     content = null
     attributes {
-      src = ${'https://www.googletagmanager.com/ns.html?id=' + this.identifier}
+      src = ${'https://www.googletagmanager.com/ns.html?id=' + identifier}
       height = 0
       width = 0
       style = 'display:none;visibility:hidden'
@@ -18,5 +18,5 @@ prototype(Soee.GoogleTagManager:NoscriptCode) < prototype(Neos.Fusion:Tag) {
 
   @if.identifierIsSet = ${String.isBlank(identifier) == false ? true:false}
   @if.inLiveWorkspace = ${node.context.workspaceName == 'live'}
-  //@if.inProductionEnvironment = ${Configuration.setting('Neos.Flow.core.context') == 'Production' ? true:false}
+  @if.inProductionEnvironment = ${Configuration.setting('Neos.Flow.core.context') == 'Production' ? true:false}
 }
