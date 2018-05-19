@@ -1,0 +1,11 @@
+include: 'Prototypes/*'
+
+prototype(Neos.Neos:Page) {
+  googleTagManagerCode = Soee.GoogleTagManager:Code {
+    @position = 'after headTag 100'
+  }
+
+  googleTagManagerNoscriptCode = Soee.GoogleTagManager:NoscriptCode {
+    @position = 'after bodyTag 100'
+  }
+}
