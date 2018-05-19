@@ -1,0 +1,21 @@
+prototype(Soee.GoogleTagaManager:NoscriptCode) < prototype(Neos.Fusion:Tag) {
+  tagName = 'noscript'
+
+  @context.identifier = ${Configuration.setting('Soee.GoogleTagManager.identifier')}
+
+  content = Neos.Fusion:Tag {
+    tagName = 'iframe'
+    content = null
+    attributes {
+      src = ${'https://www.googletagmanager.com/ns.html?id=' + this.identifier}
+      height = 0
+      width = 0
+      style = 'display:none;visibility:hidden'
+    }
+  }
+
+  # include noscript code only if identifier is configured for the current site
+  @if.identifierIsSet = ${String.isBlank(this.identifier) == false ? true:false}
+  @if.inLiveWorkspace = ${node.context.workspaceName == 'live'}
+  @if.inProductionEnvironment = ${Configuration.setting('Neos.Flow.core.context') == 'Production' ? true:false}
+}

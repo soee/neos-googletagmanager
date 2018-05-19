@@ -1,0 +1,16 @@
+include: 'Prototypes/*'
+
+prototype(Neos.Neos:Page) {
+  head {
+    javascript {
+      googleTagManager = Soee.GoogleTagManager:Code {
+        @position = 'start 0'
+      }
+    }
+  }
+
+  googleTagManagerCode = Soee.GoogleTagManager:NoscriptCode {
+    # Google suggests to include the tracking code directly after the <body> tag
+    @position = 'after bodyTag 100'
+  }
+}
