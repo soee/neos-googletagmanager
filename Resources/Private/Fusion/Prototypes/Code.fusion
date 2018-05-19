@@ -7,7 +7,7 @@ prototype(Soee.GoogleTagManager:Code) < prototype(Neos.Fusion:Tag) {
 new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
 "https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,"script","dataLayer","' + identifier + ');"'}
+})(window,document,"script","dataLayer","' + identifier + '");'}
 
   @process.wrapWithComments = ${'<!-- Google Tag Manager -->' + value + '<!-- End Google Tag Manager -->'}
 
