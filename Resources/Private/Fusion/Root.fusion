@@ -1,16 +1,11 @@
 include: 'Prototypes/*'
 
 prototype(Neos.Neos:Page) {
-  head {
-    javascript {
-      googleTagManager = Soee.GoogleTagManager:Code {
-        @position = 'start 0'
-      }
-    }
+  googleTagManagerCode = Soee.GoogleTagManager:Code {
+    @position = 'after headTag 100'
   }
 
-  googleTagManagerCode = Soee.GoogleTagManager:NoscriptCode {
-    # Google suggests to include the tracking code directly after the <body> tag
+  googleTagManagerNoscriptCode = Soee.GoogleTagManager:NoscriptCode {
     @position = 'after bodyTag 100'
   }
 }

@@ -14,8 +14,9 @@ prototype(Soee.GoogleTagManager:NoscriptCode) < prototype(Neos.Fusion:Tag) {
     }
   }
 
-  # include noscript code only if identifier is configured for the current site
-  @if.identifierIsSet = ${String.isBlank(this.identifier) == false ? true:false}
+  @process.wrapWithComments = ${'<!-- Google Tag Manager (noscript) -->' + value + '<!-- End Google Tag Manager (noscript) -->'}
+
+  @if.identifierIsSet = ${String.isBlank(identifier) == false ? true:false}
   @if.inLiveWorkspace = ${node.context.workspaceName == 'live'}
-  @if.inProductionEnvironment = ${Configuration.setting('Neos.Flow.core.context') == 'Production' ? true:false}
+  //@if.inProductionEnvironment = ${Configuration.setting('Neos.Flow.core.context') == 'Production' ? true:false}
 }
