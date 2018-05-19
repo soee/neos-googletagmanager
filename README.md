@@ -57,7 +57,7 @@ Vendor:
     environment: 'Development'
 ```
 
-Than you can use it decide if Google Tag Manager code should be rendered like this:
+Than you can use it to decide if Google Tag Manager code should be rendered like this:
 ```Fusion
 Neos.Neos:Page {
   ...
