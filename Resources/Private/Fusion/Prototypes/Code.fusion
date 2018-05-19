@@ -1,4 +1,4 @@
-prototype(Soee.GoogleTagaManager:Code) < prototype(Neos.Fusion:Tag) {
+prototype(Soee.GoogleTagManager:Code) < prototype(Neos.Fusion:Tag) {
   tagName = 'script'
 
   @context.identifier = ${Configuration.setting('Soee.GoogleTagManager.identifier')}
