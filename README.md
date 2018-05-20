@@ -6,7 +6,7 @@ Easily integrates Google Tag Manager installation code with your Neos website.
 
 Add manually `soee-googletagmanager` package to your `composer.json` file to type in command line:
 
-`composer install soee-googletagmanager`
+`composer require soee/googletagmanager`
 
 ## Configuration
 
